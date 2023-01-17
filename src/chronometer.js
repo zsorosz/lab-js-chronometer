@@ -20,7 +20,11 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+    if (value.toString().length === 2) {
+      return value.toString();
+    } else {
+      return `0${value.toString()}`;
+    }
   }
 
   stop() {
