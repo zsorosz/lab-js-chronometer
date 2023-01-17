@@ -9,6 +9,7 @@ class Chronometer {
       this.currentTime += 1;
       if (printTimeCallback) printTimeCallback();
     }, 1000);
+    console.log(this.currentTime);
   }
 
   getMinutes() {
@@ -28,14 +29,19 @@ class Chronometer {
   }
 
   stop() {
-    // ... your code goes here
+    setTimeout(() => {
+      clearInterval(this.intervalId);
+    }, 0);
+    console.log(this.intervalId);
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime = 0;
   }
 
   split() {
-    // ... your code goes here
+    return `${this.computeTwoDigitNumber(
+      this.getMinutes(this.currentTime)
+    )}:${this.computeTwoDigitNumber(this.getSeconds(this.currentTime))}`;
   }
 }
