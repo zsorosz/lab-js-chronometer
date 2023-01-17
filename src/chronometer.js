@@ -9,7 +9,7 @@ class Chronometer {
       this.currentTime += 1;
       if (printTimeCallback) printTimeCallback();
     }, 1000);
-    console.log(this.currentTime);
+    // console.log(this.currentTime);
   }
 
   getMinutes() {
@@ -29,10 +29,7 @@ class Chronometer {
   }
 
   stop() {
-    setTimeout(() => {
-      clearInterval(this.intervalId);
-    }, 0);
-    console.log(this.intervalId);
+    clearInterval(this.intervalId);
   }
 
   reset() {
